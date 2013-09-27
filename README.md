@@ -1,4 +1,7 @@
 BuildDeb
 ========
 
-Build Debian package 
+Build Debian package for Python
+
+
+    
