@@ -43,7 +43,6 @@ from glob import glob
 from datetime import datetime
 import socket # gethostname()
 
-#~ __version__ = "0.4"
 __version__ = "0.6"
 __author__ = "manatlan"
 __mail__ = "manatlan@gmail.com"
@@ -268,6 +267,7 @@ FILES :
         # create dates (buildDate,buildDateYear)
         d=datetime.now()
         buildDate=d.strftime("%a, %d %b %Y %H:%M:%S +0000")
+        buildstamp=d.strftime("%H%M%S")
         buildDateYear=str(d.year)
 
 
@@ -279,7 +279,7 @@ FILES :
         changelog=changelog.replace("\r","").strip()
         changelog = "\n  ".join(changelog.split("\n"))
 
-        TEMP = ".py2deb_build_folder"
+        TEMP = ".py2deb_build_folder_%s" % buildstamp
         DEST = os.path.join(TEMP,name)
         DEBIAN = os.path.join(DEST,"debian")
 
